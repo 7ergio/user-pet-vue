@@ -16,12 +16,15 @@ export default {
       user: null
     }
   },
-  mounted () {
-    axios
-        .get('https://randomuser.me/api/')
-        .then(response => (this.user = response))
-    // const res = await fetch('https://randomuser.me/api/')
-    // const user = await res.json()
+  methods: {
+    getJson() {
+      axios
+          .get('https://randomuser.me/api/')
+          .then(response => (this.user = response))
+    }
+  },
+  created () {
+    this.getJson();
   }
 }
 </script>
