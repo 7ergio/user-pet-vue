@@ -25,10 +25,15 @@
 </template>
 
 <script>
+
 export default {
   name: 'UserCard',
   props: {
-    msg: String
+    msg: String,
+    user: Object
+  },
+  mounted () {
+    console.log(this.user)
   }
 }
 </script>
