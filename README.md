@@ -1,5 +1,6 @@
 # user-pet-vue
-Test description
+For cards UI we used semantic-ui library
+The examples of showing the cards can be found here https://semantic-ui.com/views/card.html
 
 ## Project setup
 ```
