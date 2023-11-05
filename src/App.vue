@@ -4,7 +4,6 @@
 
 <script>
 import UserCard from './components/UserCard.vue'
-import axios from 'axios'
 
 export default {
   name: 'App',
@@ -17,14 +16,14 @@ export default {
     }
   },
   methods: {
-    getJson() {
-      axios
-          .get('https://randomuser.me/api/')
-          .then(response => (this.user = response))
+    async getUser() {
+      const response = await fetch('https://randomuser.me/api/');
+      this.user = await response.json();
+      console.log(this.user);
     }
   },
   created () {
-    this.getJson();
+    this.getUser();
   }
 }
 </script>
