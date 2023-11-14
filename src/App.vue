@@ -1,5 +1,5 @@
 <template>
-  <UserCard msg="Welcome to User Profile pet project" :user="user"/>
+  <UserCard msg="Welcome to User Profile pet project" v-if="user" :user="user"/>
 </template>
 
 <script>
@@ -17,9 +17,10 @@ export default {
   },
   methods: {
     async getUser() {
-      const response = await fetch('https://randomuser.me/api/');
-      this.user = await response.json();
-      console.log(this.user);
+      const response = await fetch('https://randomuser.me/api/')
+      .then((res) => res.json())
+      .then((user) => user.results)
+      this.user =  response;
     }
   },
   created () {
