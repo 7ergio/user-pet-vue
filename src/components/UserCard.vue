@@ -11,12 +11,12 @@
       <div class="content">
         <div class="description">
           <p id="user_title">Hi, My name is</p>
-          <h3 id="user_value">{{simpleUser.name.first}}</h3>
+          <h3 id="user_value">{{ fullName }}</h3>
         </div>
         <div class="extra content">
           <ul class="content__list">
             <li class="content__list-item">
-              <i class="user circle icon active" data-title="Hi, My name is" :data-value="simpleUser.name.first" @mouseover="mouseOver"></i>
+              <i class="user circle icon active" data-title="Hi, My name is" :data-value="fullName" @mouseover="mouseOver"></i>
             </li>
             <li class="content__list-item">
               <i class="envelope icon" data-title="My email address is" :data-value="simpleUser.email" @mouseover="mouseOver"></i>
@@ -69,6 +69,9 @@ export default {
     }
   },
   computed: {
+    fullName () {
+      return `${this.simpleUser.name.first} ${this.simpleUser.name.last}`
+    },
     fullAddress () {
         return `${this.simpleUser.location.street.number} ${this.simpleUser.location.street.name}`
     },
