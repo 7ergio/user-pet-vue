@@ -1,5 +1,6 @@
 <template>
   <UserCard msg="Welcome to User Profile pet project" v-if="user" :user="user"/>
+  <button type="button" @click="getUser">Fetch New User</button>
 </template>
 
 <script>
@@ -20,7 +21,8 @@ export default {
       const response = await fetch('https://randomuser.me/api/')
       .then((res) => res.json())
       .then((user) => user.results)
-      this.user =  response;
+      this.user =  response[0];
+      console.log(this.user);
     }
   },
   created () {
