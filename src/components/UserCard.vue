@@ -50,11 +50,6 @@ export default {
     msg: String,
     user: Array
   },
-  data () {
-  },
-  watch: {
-    
-  },
   methods: {
     format_date(value){
       if (value) {
