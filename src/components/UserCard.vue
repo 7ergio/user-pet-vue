@@ -6,7 +6,7 @@
 
     <div class="ui card">
       <div class="image rounded">
-        <img :src="simpleUser.picture.large">
+        <img :src="user.picture.large">
       </div>
       <div class="content">
         <div class="description">
@@ -19,7 +19,7 @@
               <i class="user circle icon active" data-title="Hi, My name is" :data-value="fullName" @mouseover="mouseOver"></i>
             </li>
             <li class="content__list-item">
-              <i class="envelope icon" data-title="My email address is" :data-value="simpleUser.email" @mouseover="mouseOver"></i>
+              <i class="envelope icon" data-title="My email address is" :data-value="user.email" @mouseover="mouseOver"></i>
             </li>
             <li class="content__list-item">
               <i class="calendar alternate icon" data-title="My birthday is" :data-value="dob" @mouseover="mouseOver"></i>
@@ -28,10 +28,10 @@
               <i class="map icon" data-title="My address is" :data-value="fullAddress" @mouseover="mouseOver"></i>
             </li>
             <li class="content__list-item">
-              <i class="mobile alternate icon" data-title="My phone number is" :data-value="simpleUser.phone" @mouseover="mouseOver"></i>
+              <i class="mobile alternate icon" data-title="My phone number is" :data-value="user.phone" @mouseover="mouseOver"></i>
             </li>
             <li class="content__list-item">
-              <i class="user secret icon" data-title="My password is" :data-value="simpleUser.login.password" @mouseover="mouseOver"></i>
+              <i class="user secret icon" data-title="My password is" :data-value="user.login.password" @mouseover="mouseOver"></i>
             </li>
           </ul>
         </div>
@@ -50,11 +50,6 @@ export default {
     msg: String,
     user: Array
   },
-  data () {
-    return {
-      simpleUser: this.user[0]
-    }
-  },
   methods: {
     format_date(value){
       if (value) {
@@ -70,13 +65,13 @@ export default {
   },
   computed: {
     fullName () {
-      return `${this.simpleUser.name.first} ${this.simpleUser.name.last}`
+      return `${this.user.name.first} ${this.user.name.last}`
     },
     fullAddress () {
-        return `${this.simpleUser.location.street.number} ${this.simpleUser.location.street.name}`
+        return `${this.user.location.street.number} ${this.user.location.street.name}`
     },
     dob () {
-      return this.format_date(this.simpleUser.dob.date)
+      return this.format_date(this.user.dob.date)
     }
   }
 }
