@@ -46,16 +46,16 @@ export default {
 }
 .button {
   display: inline-block;
-    margin: 10px 0;
-    border: 1px solid #d4d4d5;
-    background-color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
+  margin: 10px 0;
+  border: 1px solid #d4d4d5;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
 
-    &:hover {
-      color: #83ba43;
-      color: #fff;
-    }
+  &:hover {
+    color: #83ba43;
+    border-color: #83ba43;
+  }
 }
 </style>
